@@ -1,0 +1,16 @@
+{
+    "name": "TheLuisTorres",
+    "short_name": "TheLuisTorres",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#ffcd60",
+    "background_color": "#ffcd60",
+    "icons": [
+        {
+            "src": "/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
