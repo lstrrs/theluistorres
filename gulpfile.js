@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
+    browserSync = require('browser-sync').create(),
     del = require('del');
 
 var paths = {
@@ -43,6 +44,9 @@ gulp.task('styles', function() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssnano())
         .pipe(gulp.dest('dist/assets/css'))
+
+        //.pipe(browserSync.stream())
+
         .pipe(notify({ message: 'Style task complete' }));
 });
 
@@ -110,3 +114,33 @@ gulp.task('watch', function() {
     // Watch any files in dist/, reload on change
     gulp.watch(['dist/**']).on('change', livereload.changed);
 });
+
+// create a task that ensures the `js` task is complete before
+// reloading browsers
+gulp.task('js-watch', ['scripts'], function (done) {
+    browserSync.reload();
+    done();
+});
+
+gulp.task('styles-watch', ['styles'], function (done) {
+    browserSync.reload();
+    done();
+});
+
+// Static Server + watching scss/html files
+gulp.task('serve', ['styles', 'scripts', 'images'], function() {
+
+    browserSync.init({
+        server: './'
+    });
+
+    // gulp.watch('src/sass/**/*.scss', ['styles-watch']);
+    // gulp.watch('src/javascript/**/*.js', ['js-watch']);
+
+    gulp.watch('src/sass/**/*.scss', ['styles', browserSync.reload]);
+    gulp.watch('src/javascript/**/*.js', ['scripts', browserSync.reload]);
+    gulp.watch('src/images/**/*', ['images', browserSync.reload]);
+    gulp.watch('*.html').on('change', browserSync.reload);
+});
+
+gulp.task('dev', ['serve']);

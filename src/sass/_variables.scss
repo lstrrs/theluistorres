@@ -1,1 +1,16 @@
 $navbar-height: 5rem;
+
+// Screen Sizes
+$screen-xs-min: 0px; // Extra Small devices - phones
+$screen-sm-min: 768px; // Small Devices - Tablets
+$screen-md-min: 992px; // Medium Devices - Desktops
+$screen-lg-min: 1200px; // Large Devices - Large Desktops
+
+$screen-xs-max: 767px;
+$screen-sm-max: 991px;
+$screen-md-max: 1199px;
+
+// Breakpoints
+$break-viewport-small: 460px;
+$break-viewport-medium: 640px;
+$break-viewport-large: 960px;
