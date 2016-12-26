@@ -1,4 +1,4 @@
-define([
+define('image', [
     'util'
 ], function(
     Utils

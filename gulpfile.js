@@ -61,14 +61,8 @@ gulp.task('lib', function() {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src('src/javascript/**/*.js')
-    // return gulp.src(['src/javascript/**/*.module.js', 'src/javascript/**/*.js'])
-    // return gulp.src([
-    //         'src/javascript/**/spinner.module.js',
-    //         'src/javascript/**/data.module.js',
-    //         'src/javascript/**/*.module.js',
-    //         'src/javascript/**/*.js'
-    //     ])
+    // return gulp.src('src/javascript/**/*.js')
+    return gulp.src(['app.js', 'src/javascript/**/*.js'])
         //.pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'))
         .pipe(concat('main.js'))

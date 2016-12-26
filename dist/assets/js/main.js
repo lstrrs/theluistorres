@@ -1,4 +1,21 @@
-define([
+// For any third party dependencies, like jQuery, place them in the lib folder.
+
+// Configure loading modules from the lib directory,
+// except for 'app' ones, which are in a sibling
+// directory.
+requirejs.config({
+    baseUrl: 'src/javascript',
+    paths: {
+        app: '../dist'
+    }
+});
+
+// Start loading the main app file. Put all of
+// your application logic in there.
+requirejs(['main'], function(main) {
+    main.loadImages();
+});
+define('image', [
     'util'
 ], function(
     Utils
@@ -29,20 +46,22 @@ define([
 
     return Image;
 });
-define([
+define('main', [
     'image'
 ], function(
     Image
 ) {
     'use strict';
 
-    var imageElems = document.querySelectorAll('.js-img-preload');
-    Image.loadProgressiveImages_v3(imageElems);
+    return {
+        loadImages: function() {
+            var imageElems = document.querySelectorAll('.js-img-preload');
+            Image.loadProgressiveImages_v3(imageElems);
+        }
+    };
 });
-define([
-
+define('util', [
 ], function(
-
 ) {
     'use strict';
 
@@ -51,11 +70,11 @@ define([
             if (elem.addEventListener) {
                 elem.addEventListener(event, func, false);
             } else if (elem.attachEvent) {
-                elem.attachEvent("on" + event, func);
+                elem.attachEvent('on' + event, func);
             }
         },
         addEvents: function(elem, events, func) {
-            var eventsArray = events.split(" ");
+            var eventsArray = events.split(' ');
             var length = eventsArray.length;
             var hasEventListener = elem.addEventListener ? true : false;
 
@@ -64,7 +83,7 @@ define([
                 if (hasEventListener) {
                     elem.addEventListener(eventsArray[i], func, false);
                 } else {
-                    elem.attachEvent("on" + eventsArray[i], func);
+                    elem.attachEvent('on' + eventsArray[i], func);
                 }
             }
         },
@@ -72,7 +91,7 @@ define([
             if (elem.removeEventListener) {
                 elem.removeEventListener(event, func, false);
             } else if (elem.detachEvent) {
-                elem.detachEvent("on" + event, func);
+                elem.detachEvent('on' + event, func);
             }
         },
         removeEvents: function(elem, events, func) {
@@ -84,7 +103,7 @@ define([
                 if (hasEventListener) {
                     elem.removeEventListener(eventsArray[i], func, false);
                 } else {
-                    elem.detachEvent("on" + eventsArray[i], func);
+                    elem.detachEvent('on' + eventsArray[i], func);
                 }
             }
         }

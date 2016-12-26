@@ -1,10 +1,14 @@
-define([
+define('main', [
     'image'
 ], function(
     Image
 ) {
     'use strict';
 
-    var imageElems = document.querySelectorAll('.js-img-preload');
-    Image.loadProgressiveImages_v3(imageElems);
+    return {
+        loadImages: function() {
+            var imageElems = document.querySelectorAll('.js-img-preload');
+            Image.loadProgressiveImages_v3(imageElems);
+        }
+    };
 });
