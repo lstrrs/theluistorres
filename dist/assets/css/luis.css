@@ -513,6 +513,7 @@ a:hover {
   height: 200px;
   position: relative;
   overflow: hidden;
+  transition: height 0.3s linear;
 }
 @media screen and (min-width: 460px) and (max-width: 640px) {
   .jumbotron {

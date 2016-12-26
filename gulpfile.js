@@ -60,6 +60,16 @@ gulp.task('lib', function() {
         .pipe(gulp.dest('dist/lib'));
 });
 
+gulp.task('lib-js', function() {
+    return gulp.src('src/lib/**/*.js')
+        .pipe(concat('deps.js'))
+        .pipe(gulp.dest('dist/lib'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/lib'))
+        .pipe(notify({ message: 'JS libs task complete' }));
+});
+
 gulp.task('scripts', function() {
     // return gulp.src('src/javascript/**/*.js')
     return gulp.src(['app.js', 'src/javascript/**/*.js'])
@@ -81,11 +91,11 @@ gulp.task('images', function() {
 });
 
 gulp.task('clean', function() {
-    return del(['dist/assets/css', 'dist/assets/js', 'dist/assets/img', 'dist/assets/fonts']);
+    return del(['dist/assets/css', 'dist/assets/js', 'dist/assets/img', 'dist/assets/fonts', 'dist/lib']);
 });
 
 gulp.task('default', ['clean'], function() {
-    gulp.start('fonts', 'styles', 'scripts', 'images');
+    gulp.start('fonts', 'styles', 'lib', 'lib-js', 'scripts', 'images');
 });
 
 gulp.task('watch', function() {
@@ -109,27 +119,15 @@ gulp.task('watch', function() {
     gulp.watch(['dist/**']).on('change', livereload.changed);
 });
 
-// create a task that ensures the `js` task is complete before
-// reloading browsers
-gulp.task('js-watch', ['scripts'], function (done) {
-    browserSync.reload();
-    done();
-});
-
-gulp.task('styles-watch', ['styles'], function (done) {
-    browserSync.reload();
-    done();
-});
-
 // Static Server + watching scss/html files
-gulp.task('serve', ['styles', 'scripts', 'images'], function() {
+gulp.task('serve', ['lib', 'lib-js', 'styles', 'scripts', 'images'], function() {
 
     browserSync.init({
         server: './'
     });
 
-    // gulp.watch('src/sass/**/*.scss', ['styles-watch']);
-    // gulp.watch('src/javascript/**/*.js', ['js-watch']);
+    gulp.watch('src/lib/**/*', ['lib', browserSync.reload]);
+    gulp.watch('src/lib/**/*.js', ['lib-js', browserSync.reload]);
 
     gulp.watch('src/sass/**/*.scss', ['styles', browserSync.reload]);
     gulp.watch('src/javascript/**/*.js', ['scripts', browserSync.reload]);
