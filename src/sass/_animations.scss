@@ -267,3 +267,41 @@
         animation-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
     }
 }
+
+// Bar width animation
+//
+// NOTE:
+// We have to use visibility hidden at keyframe 0% instead of applying visibility: hidden to elements
+// the reason is that -webkit-animation-fill-mode: forwards; is still in experimental mode
+@-webkit-keyframes animate-width {
+    0% {
+        visibility: hidden;
+        width: 0;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+@-moz-keyframes animate-width {
+    0% {
+        visibility: hidden;
+        width: 0;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes animate-width {
+    0% {
+        visibility: hidden;
+        width: 0;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}

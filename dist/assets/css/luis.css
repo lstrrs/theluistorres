@@ -273,6 +273,15 @@ a:hover {
     animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
   }
 }
+@keyframes animate-width {
+  0% {
+    visibility: hidden;
+    width: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
 .section-container, .header-container {
   padding: 4% 4% 4% 4%;
 }
