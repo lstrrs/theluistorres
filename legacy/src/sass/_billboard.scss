@@ -1,0 +1,18 @@
+.jumbotron {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.3s linear;
+
+    @media screen and (min-width: $break-viewport-small) and (max-width: $break-viewport-medium) {
+        height: 400px;
+    }
+
+    @media screen and (min-width: $break-viewport-medium) and (max-width: $break-viewport-large) {
+        height: 500px;
+    }
+
+    @media screen and (min-width: $break-viewport-large) {
+        height: 700px;
+    }
+}
