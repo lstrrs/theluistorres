@@ -55,64 +55,6 @@
     width: 100%;
 }
 
-.contacts {
-    display: block;
-    z-index: 1;
-}
-
-.contact {
-    background-image: url(../img/contact-tiles.png);
-    background-size: 270px;
-    display: inline-block;
-    margin-right: 5px;
-    background-repeat: no-repeat;
-}
-
-.item {
-    height: 50px;
-    width: 50px;
-}
-
-.item.linkedin {
-    background-position: 0px 0px;
-}
-
-.item.facebook {
-    background-position: -55px 0px;
-}
-
-.item.twitter {
-    background-position: -110px 0px;
-}
-
-.item.instagram {
-    background-position: -165px 0px;
-}
-
-.item.email {
-    background-position: -220px 0px;
-}
-
-.item.linkedin:hover {
-    background-position: 0px -55px;
-}
-
-.item.facebook:hover {
-    background-position: -55px -55px;
-}
-
-.item.twitter:hover {
-    background-position: -110px -55px;
-}
-
-.item.instagram:hover {
-    background-position: -165px -55px;
-}
-
-.item.email:hover {
-    background-position: -220px -55px;
-}
-
 .recent-work {
     font-size: 0;
 }
