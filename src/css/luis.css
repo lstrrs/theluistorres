@@ -1,7 +1,7 @@
-@layer reset, theme, layout, utilities, components;
-
 @import "_reset.css" layer(reset);
 @import "_theme.css" layer(theme);
 @import "_layout.css" layer(layout);
 @import "_utilities.css" layer(utilities);
 @import "_components.css" layer(components);
+
+@layer reset, theme, layout, utilities, components;
