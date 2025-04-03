@@ -1,0 +1,17 @@
+:root {
+  --white: #fff;
+  --black1: #333;
+  --black2: #444;
+  --gray1: #4a4a4a;
+  --gray2: #8f8e94;
+
+  --colorText: var(--black1);
+  --colorPrimary: var(--black1);
+  --colorContainer: #fff;
+
+  color-scheme: light;
+
+  --sizeQuarterX: 0.2rem;
+  --sizeHalfX: 0.4rem;
+  --cornerRadiusFull: 99.9rem;
+}
