@@ -83,3 +83,15 @@
 .gapOne {
   gap: 0.8rem;
 }
+
+.listStyleNone {
+  list-style: none;
+}
+
+.paddingNone {
+  padding: 0;
+}
+
+.widthFitContent {
+  width: fit-content;
+}
