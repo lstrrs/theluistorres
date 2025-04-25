@@ -8,10 +8,49 @@
   --colorText: var(--black1);
   --colorPrimary: var(--black1);
   --colorContainer: #fff;
+  --colorAction: #c2625e;
 
   color-scheme: light;
 
   --sizeQuarterX: 0.2rem;
   --sizeHalfX: 0.4rem;
   --cornerRadiusFull: 99.9rem;
+
+  --baseFont: 'Montserrat', Helvetica Neue, Helvetica, Arial, sans-serif;
+  --paragraphFont: 'Raleway', Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--baseFont);
+  /* color: #767676; */
+}
+
+h1 {
+  font-size: 2.4rem;
+  line-height: 1.25;
+}
+
+p {
+  font-size: 1.6rem;
+  font-family: var(--paragraphFont);
+  margin-top: 5%;
+}
+
+a {
+  color: var(--colorAction);
+  font-weight: 800;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h3, ul {
+  font-size: 1.6rem;
 }
