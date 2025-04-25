@@ -1,5 +1,7 @@
-:root {
-  --breakpointSmall: 46rem;
-  --breakpointMedium: 64rem;
-  --breakpointLarge: 96rem;
+@layer layout {
+  :root {
+    --breakpointSmall: 46rem;
+    --breakpointMedium: 64rem;
+    --breakpointLarge: 96rem;
+  }
 }
