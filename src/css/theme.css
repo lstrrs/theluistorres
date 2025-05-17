@@ -39,7 +39,7 @@
   p {
     font-size: 1.6rem;
     font-family: var(--paragraphFont);
-    margin-top: 5%;
+    margin-top: 2.4rem;
   }
   
   a {
@@ -54,5 +54,25 @@
   
   h3, ul {
     font-size: 1.6rem;
+  }
+
+  ul {
+    font-family: var(--paragraphFont);
+  }
+
+  /* Use clamp for all of these */
+  @media (width > 640px) {
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      line-height: 40px;
+    }
+
+    p {
+      font-size: 2rem;
+    }
   }
 }

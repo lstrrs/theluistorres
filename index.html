@@ -71,7 +71,7 @@
       </div>
     </section>
 
-    <section id="intro-section" class="section">
+    <section id="intro-section" class="container column">
       <div id="intro-contact" class="row gapOne">
         <a href="https://www.linkedin.com/in/theluistorres" class="box cornerRadiusFull contact" style="--contactColor: #0a66c2;" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" width="24" viewBox="0 0 310 310" class="center">
@@ -131,13 +131,13 @@
       </div>
     </section>
 
-    <div class="header about">
-      <h2>Some things about me</h2>
-    </div>
+    <section id="about-section" class="about column">
+      <div class="header container">
+        <h2>Some things about me</h2>
+      </div>
 
-    <section id="about-section" class="section about">
-      <div class="grid">
-        <div class="gridItem">
+      <div class="grid container gapThree" style="--gridColumns: 3;">
+        <div class="gridItem column gapThree">
           <h3 class="widthFitContent">Work</h3>
           <ul class="listStyleNone paddingNone">
             <li>LinkedIn</li>
@@ -147,7 +147,7 @@
             <li>Invensys</li>
           </ul>
         </div>
-        <div class="gridItem">
+        <div class="gridItem column gapThree">
           <h3 class="widthFitContent">Locations</h3>
           <ul class="listStyleNone paddingNone">
             <li>San Francisco</li>
@@ -157,44 +157,42 @@
             <li>Lake Forest</li>
           </ul>
         </div>
-        <div class="gridItem">
+        <div class="gridItem column gapThree">
           <h3 class="widthFitContent">Things I Do</h3>
           <ul class="listStyleNone paddingNone">
             <li>CSS</li>
             <li>HTML, JS, UI, UX</li>
             <li>Design Tooling</li>
             <li>Mentor</li>
-            <li>Drawing and Painting</li>
+            <li>Art</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <div class="header">
-      <h2>Some things I've worked on</h2>
-    </div>
-
-    <!-- <section id="work-section" class="work-section">
-      <div class="recent-work">
-        <span class="tile" role="pointer">
-          <a href="https://www.amazon.com/underground" target="_blank">
-            <img class="js-img-preload work-tiles-images img-preload" data-loaded="small" data-medium="dist/assets/img/work/underground.jpg" data-large="dist/assets/img/work/underground-2.jpg" src="dist/assets/img/work/underground-xs.jpg">
-            <div class="curtain">
-              <h4>Amazon Underground<br> Web Development</h4>
-            </div>
-          </a>
-        </span>
-
-        <span class="tile" role="pointer">
-          <a href="https://alexa.amazon.com/" target="_blank">
-            <img class="js-img-preload work-tiles-images img-preload" data-loaded="small" data-medium="dist/assets/img/work/alexa.jpg" data-large="dist/assets/img/work/alexa-2.jpg" src="dist/assets/img/work/alexa-xs.jpg">
-            <div class="curtain">
-              <h4>Alexa<br> Web Development</h4>
-            </div>
-          </a>
-        </span>
+    <section id="work-section" class="work column">
+      <div class="header container">
+        <h2>Some things I've worked on</h2>
       </div>
-    </section> -->
+
+      <div class="grid gapThree" style="padding-inline: 0.8rem; padding-block-end: 2%;">
+        <div class="gridItem box background" style="--backgroundColor: #34ace0; aspect-ratio: 1; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;">
+          <h4 class="center textAlignCenter typographyHeading overlayText">LinkedIn's rebranding</h4>
+        </div>
+
+        <div class="gridItem box background" style="--backgroundColor: #2c2c54; aspect-ratio: 1; border-radius: 61% 39% 41% 59% / 51% 30% 70% 49%;">
+          <h4 class="center textAlignCenter typographyHeading overlayText">LinkedIn's Dark Mode</h4>
+        </div>
+
+        <div class="gridItem box background" style="--backgroundColor: #33d9b2; aspect-ratio: 1; border-radius: 31% 69% 19% 81% / 50% 46% 54% 50%;">
+          <h4 class="center textAlignCenter typographyHeading overlayText">Figma Plugins @ LinkedIn</h4>
+        </div>
+
+        <div class="gridItem box background" style="--backgroundColor: #aaa69d; aspect-ratio: 1; border-radius: 53% 47% 57% 43% / 69% 46% 54% 31%;">
+          <h4 class="center textAlignCenter typographyHeading overlayText">A11y @ LinkedIn</h4>
+        </div>
+      </div>
+    </section>
 
     <script type="text/javascript">
       (function() {
